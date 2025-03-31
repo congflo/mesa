@@ -12,11 +12,9 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: Option homebrew
-        uses: Homebrew/brew
-        with:
-          version: '3.4.14'
       - name: Build iOS
+        env:
+          HOMEBREW_VERSION: 3.4.14
         run: |
           git clone --depth 1 https://github.com/KhronosGroup/MoltenVK
           ln -s vulkan_ios.pc vulkan.pc
