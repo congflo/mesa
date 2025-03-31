@@ -12,10 +12,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      - name: install homebrew
-        run: |
-          brew install --build-from-source homebrew/versions/homebrew-3.4.14
-          export PATH="/usr/local/Cellar/homebrew/3.4.14/bin:$PATH"
+      - name: Option homebrew
+        uses: Homebrew/brew
+        with:
+          version: '3.4.14'
       - name: Build iOS
         run: |
           git clone --depth 1 https://github.com/KhronosGroup/MoltenVK
