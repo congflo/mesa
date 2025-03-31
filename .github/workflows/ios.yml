@@ -1,4 +1,3 @@
-
 name: Build iOS
 
 on:
@@ -16,12 +15,12 @@ jobs:
         run: |
           git clone --depth 1 https://github.com/KhronosGroup/MoltenVK
           ln -s vulkan_ios.pc vulkan.pc
-          brew install meson pkg-config
+          brew install meson pkg-config python
           # sudo apt install -y meson libxrandr-dev libxxf86vm-dev libxshmfence-dev libxcb-*-dev libx11-xcb-dev libxfixes-dev libdrm-dev libx11-dev
           # cp -R /usr/include/X11 include/
           # cp -R /usr/include/xcb include/
           # cp -R /usr/include/GL/* include/GL/
-          pip3 install --break-system-packages mako && pip3 show mako
+          pip install --break-system-packages mako && pip3 show mako
           # -Dglx=gallium-xlib \
           # -Dglx=dri
           meson build-ios-aarch64 \
