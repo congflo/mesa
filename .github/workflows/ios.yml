@@ -42,7 +42,7 @@ jobs:
           # cp build-ios-aarch64/src/gallium/drivers/zink/libzink.a /tmp/zink/lib/
           install_name_tool -change /tmp/zink/lib/libglapi.0.dylib @executable_path/Frameworks/libglapi.0.dylib -change /usr/lib/libexpat.1.dylib  @loader_path/libMoltenVK.dylib /tmp/zink/lib/libOSMesa.8.dylib
       - name: Upload libraries
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@main
         with:
           name: libzink
           path: /tmp/zink
