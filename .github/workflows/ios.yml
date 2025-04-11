@@ -37,7 +37,7 @@ jobs:
             -Dopengl=true \
             -Dosmesa=true \
             -Dvulkan-drivers= \
-            -Dgallium-drivers=virgl
+            -Dgallium-drivers=zink
           ninja -C build-ios-aarch64 install
           # cp build-ios-aarch64/src/gallium/drivers/zink/libzink.a /tmp/zink/lib/
           install_name_tool -change /tmp/zink/lib/libglapi.0.dylib @rpath/libglapi.0.dylib -change /usr/lib/libexpat.1.dylib  @loader_path/libMoltenVK.dylib /tmp/zink/lib/libOSMesa.8.dylib
